@@ -1,0 +1,660 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accel Business | Project Udyam Digital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Top Navigation Header -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand">
+        <div class="brand-logo">A</div>
+        <div class="brand-text">
+          <span class="brand-name">ACCEL <b>BUSINESS</b></span>
+          <span class="brand-sub">PROJECT UDYAM DIGITAL</span>
+        </div>
+      </div>
+
+      <nav class="main-nav">
+        <button class="nav-btn active" data-tab="advisor">
+          <span class="nav-step">01</span>
+          <span class="nav-label">AI Advisor</span>
+        </button>
+        <button class="nav-btn" data-tab="quote">
+          <span class="nav-step">02</span>
+          <span class="nav-label">Bundle & Quote</span>
+        </button>
+        <button class="nav-btn" data-tab="kyc">
+          <span class="nav-step">03</span>
+          <span class="nav-label">Smart KYC</span>
+        </button>
+        <button class="nav-btn" data-tab="track">
+          <span class="nav-step">04</span>
+          <span class="nav-label">Order Tracker</span>
+        </button>
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang-selector">
+          <button id="lang-btn" class="pill-btn lang-btn" title="Change Language">
+            <span class="globe-icon">🌐</span> <span id="current-lang">EN</span>
+          </button>
+          <div id="lang-menu" class="lang-dropdown hidden">
+            <div data-lang="en" class="lang-opt selected">English (India)</div>
+            <div data-lang="hi" class="lang-opt">हिन्दी (Hindi)</div>
+            <div data-lang="hinglish" class="lang-opt">Hinglish (Mix)</div>
+          </div>
+        </div>
+
+        <button id="open-wa-btn" class="pill-btn wa-pill" title="Preview WhatsApp Flow">
+          <span class="wa-icon">💬</span> WhatsApp Mode
+        </button>
+
+        <a href="backoffice.html" class="pill-btn partner-pill" target="_blank" title="Partner & Back-office Portal">
+          <span>👔</span> Partner Portal
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="app-container">
+    <!-- Left Hero Context Panel (Collapsible on mobile) -->
+    <aside class="hero-sidebar">
+      <div class="hero-badge">ENTERPRISE TRACK A · AIRTEL SYNC 2026</div>
+      <h1 class="hero-title">Your business,<br><em>all connected in one sitting.</em></h1>
+      <p class="hero-desc">
+        Say goodbye to 3-day quotes, paper KYC and 17-day wait times. Get high-speed broadband, business SIMs, cloud tools and security in one unified bill.
+      </p>
+
+      <div class="hero-highlights">
+        <div class="hl-item">
+          <span class="hl-icon">⚡</span>
+          <div>
+            <strong>10-Minute Digital Onboarding</strong>
+            <small>No pushy sales visits or confusing jargon</small>
+          </div>
+        </div>
+        <div class="hl-item">
+          <span class="hl-icon">🔒</span>
+          <div>
+            <strong>DPDP Act 2023 Compliant</strong>
+            <small>Instant mock GSTIN/Udyam prefill & document OCR</small>
+          </div>
+        </div>
+        <div class="hl-item">
+          <span class="hl-icon">🤝</span>
+          <div>
+            <strong>Local Partner Assisted</strong>
+            <small>Local technician dispatch with guaranteed SLA</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Ribbon -->
+      <div class="metrics-ribbon">
+        <div class="mr-item">
+          <span class="mr-val">6 Cr+</span>
+          <span class="mr-lbl">India MSMEs</span>
+        </div>
+        <div class="mr-item">
+          <span class="mr-val">28%</span>
+          <span class="mr-lbl">Avg. Savings</span>
+        </div>
+        <div class="mr-item">
+          <span class="mr-val">10 Days</span>
+          <span class="mr-lbl">Target SLA</span>
+        </div>
+      </div>
+
+      <!-- Judge Live Test Helper -->
+      <div class="judge-box">
+        <div class="jb-head">
+          <span class="jb-tag">JUDGE TEST SCENARIOS</span>
+          <small>1-Click Pre-fill</small>
+        </div>
+        <div class="jb-chips">
+          <button class="jb-chip" data-test="kirana">🛒 Kirana (Micro)</button>
+          <button class="jb-chip" data-test="clinic">🩺 Clinic (Prof)</button>
+          <button class="jb-chip" data-test="retail">🏬 3-Store Retail (Multi)</button>
+          <button class="jb-chip" data-test="factory">⚙️ Textile Mill (Mfg)</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Right Workspace Area -->
+    <section class="main-workspace">
+
+      <!-- ============================================== -->
+      <!-- TAB 1: CONVERSATIONAL GENAI ADVISOR -->
+      <!-- ============================================== -->
+      <div id="panel-advisor" class="tab-panel active">
+        <div class="panel-header">
+          <div>
+            <span class="section-tag">STEP 1 OF 4 · NEEDS DISCOVERY</span>
+            <h2>Tell us about your business</h2>
+            <p class="subtitle">Chat naturally with our AI Advisor or use the quick wizard. We'll design the right-sized bundle without over-selling.</p>
+          </div>
+          <div class="mode-toggle">
+            <button id="toggle-chat-mode" class="mode-btn active">AI Chat & Voice</button>
+            <button id="toggle-wizard-mode" class="mode-btn">Quick Form</button>
+          </div>
+        </div>
+
+        <!-- Chat Mode Interface -->
+        <div id="chat-interface" class="chat-container">
+          <div id="chat-messages" class="chat-messages">
+            <!-- Messages will be injected by app.js -->
+          </div>
+
+          <div class="prompt-chips">
+            <span class="pc-lbl">Try asking:</span>
+            <button class="pc-btn" data-prompt="I run a 4-doctor dental clinic in Jaipur with 6 staff. We need reliable internet, appointment security, and professional email.">🩺 4-Doctor Clinic in Jaipur</button>
+            <button class="pc-btn" data-prompt="We have a kirana store in Indore. We need fast internet for UPI payments and a WhatsApp business account.">🛒 Kirana Store in Indore</button>
+            <button class="pc-btn" data-prompt="I manage 4 fashion outlets across Pune. Need one consolidated bill, backup internet, and CCTV monitoring.">🏬 4 Retail Stores in Pune</button>
+            <button class="pc-btn" data-prompt="Auto components factory in Ludhiana with 25 employees. Need dedicated leased line and machine monitoring IoT.">⚙️ Factory in Ludhiana</button>
+          </div>
+
+          <div class="chat-input-bar">
+            <button id="voice-btn" class="voice-mic-btn" title="Speak in Hindi or English">
+              <span class="mic-icon">🎙️</span>
+            </button>
+            <input type="text" id="chat-input" placeholder="Type or speak (e.g., 'We are a salon in Lucknow with 3 staff and need fast wifi')...">
+            <button id="send-chat-btn" class="send-btn">
+              <span>Send</span> <span>→</span>
+            </button>
+          </div>
+          <div id="voice-status" class="voice-status-indicator hidden">
+            <span class="pulse-dot"></span> Listening... Speak now in Hindi or English
+          </div>
+        </div>
+
+        <!-- Wizard Form Mode (Alternative) -->
+        <div id="wizard-interface" class="wizard-container hidden">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="wiz-segment">Business Segment</label>
+              <select id="wiz-segment">
+                <option value="micro">Micro Retail & Services (Kirana, Salon, Pharmacy)</option>
+                <option value="prof" selected>Professional Office (Clinic, CA Firm, Coaching)</option>
+                <option value="multi">Small Multi-Site Business (Retail Chain, Restaurants)</option>
+                <option value="mfg">Small Manufacturer (Textile, Auto-parts, Packaging)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="wiz-tier">City Tier</label>
+              <select id="wiz-tier">
+                <option value="2" selected>Tier 2 (Jaipur, Indore, Lucknow, Nagpur, Ludhiana...)</option>
+                <option value="1">Tier 1 (Delhi NCR, Mumbai, Bengaluru, Chennai, Kolkata, Pune...)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="wiz-employees">Team Size (Employees)</label>
+              <input type="number" id="wiz-employees" min="1" max="500" value="5">
+            </div>
+
+            <div class="form-group">
+              <label for="wiz-sites">Number of Locations / Outlets</label>
+              <input type="number" id="wiz-sites" min="1" max="50" value="1">
+            </div>
+
+            <div class="form-group">
+              <label for="wiz-spend">Current Monthly Telecom Spend (₹)</label>
+              <input type="number" id="wiz-spend" min="500" step="500" value="3500">
+            </div>
+
+            <div class="form-group">
+              <label for="wiz-has-gstin">GSTIN Available?</label>
+              <select id="wiz-has-gstin">
+                <option value="Y" selected>Yes, I have a GSTIN</option>
+                <option value="N">No, un-registered / Composite only</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="wiz-priority">Top Business Priority</label>
+            <select id="wiz-priority">
+              <option value="reliable" selected>High Uptime & Symmetrical Internet for daily operations</option>
+              <option value="customers">Reach customers & automate sales (WhatsApp API, SMS, POS)</option>
+              <option value="secure">Protect customer records, cloud data & prevent ransomware</option>
+              <option value="multi">Seamless multi-site branch connectivity & centralized management</option>
+              <option value="iot">Machine monitoring, CCTV security & fleet tracking</option>
+            </select>
+          </div>
+
+          <button id="wiz-generate-btn" class="primary-btn">
+            <span>Calculate Right-Sized Bundle</span> <span>→</span>
+          </button>
+        </div>
+
+        <!-- Real-Time Recommendation Display Card -->
+        <div id="advisor-rec-card" class="rec-card hidden">
+          <div class="rec-badge">✦ TAILORED RECOMMENDATION</div>
+          <div class="rec-header">
+            <div>
+              <h3 id="rec-bundle-title">Professional Office Digital Suite</h3>
+              <p id="rec-bundle-reason" class="rec-reason">Curated based on 5 staff members, Tier 2 location, and strict data security needs.</p>
+            </div>
+            <div class="rec-price-tag">
+              <span class="rp-label">INDICATIVE MONTHLY</span>
+              <span id="rec-price-val" class="rp-val">₹2,423<small>/mo</small></span>
+            </div>
+          </div>
+
+          <div id="rec-items-list" class="rec-items-grid">
+            <!-- Injected by app.js -->
+          </div>
+
+          <div class="rec-actions">
+            <button id="goto-quote-btn" class="primary-btn">
+              <span>Customize & Review Quote</span> <span>→</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ============================================== -->
+      <!-- TAB 2: DYNAMIC BUNDLE BUILDER & QUOTE -->
+      <!-- ============================================== -->
+      <div id="panel-quote" class="tab-panel hidden">
+        <div class="panel-header">
+          <div>
+            <span class="section-tag">STEP 2 OF 4 · TRANSPARENT PRICING</span>
+            <h2>Your customized bundle, one simple bill</h2>
+            <p class="subtitle">Customize quantities, toggle add-ons, and see your exact monthly price. No hidden activation charges or vague PDFs.</p>
+          </div>
+          <div class="quote-currency-badge">ALL PRICES IN INR · GST EXTRA</div>
+        </div>
+
+        <!-- Dependency Warning Alert (hidden by default) -->
+        <div id="dep-warning" class="alert-box warning-alert hidden">
+          <span class="alert-icon">⚠️</span>
+          <span id="dep-warning-text">Dependent product requires a base connectivity product to function.</span>
+        </div>
+
+        <!-- Bundle Builder Grid -->
+        <div class="quote-layout">
+          <div class="catalog-selector">
+            <div class="category-tabs">
+              <button class="cat-tab active" data-cat="all">All Products (25)</button>
+              <button class="cat-tab" data-cat="Connectivity">Connectivity</button>
+              <button class="cat-tab" data-cat="Communication">Communication</button>
+              <button class="cat-tab" data-cat="Cloud & Productivity">Cloud & Tools</button>
+              <button class="cat-tab" data-cat="Security">Security</button>
+              <button class="cat-tab" data-cat="IoT & Physical">IoT & CCTV</button>
+            </div>
+
+            <div id="catalog-items-container" class="catalog-cards-list">
+              <!-- Rendered by app.js -->
+            </div>
+          </div>
+
+          <!-- Sticky Bill Summary Box -->
+          <div class="bill-summary-card">
+            <h3>Consolidated Monthly Bill</h3>
+            <div id="selected-summary-list" class="summary-items">
+              <!-- Injected by app.js -->
+            </div>
+
+            <div class="bill-totals">
+              <div class="bt-row">
+                <span>Monthly Recurring (MRC)</span>
+                <strong id="quote-mrc">₹0</strong>
+              </div>
+              <div class="bt-row">
+                <span>One-Time Setup (OTC)</span>
+                <strong id="quote-otc">₹0</strong>
+              </div>
+              <div class="bt-row">
+                <span>Minimum Commitment</span>
+                <strong id="quote-contract">12 Months</strong>
+              </div>
+              <div class="bt-divider"></div>
+              <div class="bt-row total-row">
+                <span>Net First Month</span>
+                <strong id="quote-net-total">₹0</strong>
+              </div>
+            </div>
+
+            <div class="savings-callout">
+              <span class="sc-badge">SAVINGS HIGHLIGHT</span>
+              <p>Consolidating with Accel Business saves ~<strong>28%</strong> vs separate ISP, SaaS and local security vendors.</p>
+            </div>
+
+            <button id="goto-kyc-btn" class="primary-btn full-width">
+              <span>Continue to Instant Smart KYC</span> <span>→</span>
+            </button>
+            <small class="terms-note">Pricing based on catalogue midpoints. Binding quote issued instantly upon verification.</small>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ============================================== -->
+      <!-- TAB 3: SMART KYC & DPDP ACT 2023 VERIFICATION -->
+      <!-- ============================================== -->
+      <div id="panel-kyc" class="tab-panel hidden">
+        <div class="panel-header">
+          <div>
+            <span class="section-tag">STEP 3 OF 4 · INSTANT VERIFICATION</span>
+            <h2>Verify your business in under 60 seconds</h2>
+            <p class="subtitle">DPDP Act 2023 compliant verification. Use your GSTIN/Udyam for instant prefill, or upload specimen documents.</p>
+          </div>
+          <div class="dpdp-shield-badge">
+            <span>🛡️</span> DPDP ACT 2023 COMPLIANT
+          </div>
+        </div>
+
+        <!-- DPDP Notice & Consent Box -->
+        <div class="consent-card">
+          <div class="cc-header">
+            <span class="cc-tag">STATUTORY CONSENT & PRIVACY NOTICE</span>
+            <small>DPDP Act, 2023 · Section 6</small>
+          </div>
+          <p class="cc-text">
+            Accel Business requests your affirmative consent to query mock government registries (GSTIN & Udyam) and extract text from uploaded KYC documents.
+            <strong>Purpose Limitation:</strong> Used strictly for establishing your telecom service and fraud prevention.
+            <strong>Data Minimisation:</strong> We do not store unnecessary personal records.
+            <strong>Storage Cap:</strong> Raw document images are scheduled for operational deletion after 90 days.
+          </p>
+          <label class="consent-checkbox-label">
+            <input type="checkbox" id="dpdp-consent-chk">
+            <span><strong>I agree and grant affirmative consent</strong> to Accel Business for statutory onboarding verification.</span>
+          </label>
+        </div>
+
+        <!-- KYC Verification Workspace: Two Methods -->
+        <div class="kyc-methods-grid">
+          
+          <!-- Method A: Mock Registry Lookup -->
+          <div class="kyc-method-card">
+            <div class="km-header">
+              <span class="km-icon">🏛️</span>
+              <div>
+                <h3>Method A: Instant Registry Prefill</h3>
+                <small>Queries our 6,257 mock registry records</small>
+              </div>
+            </div>
+
+            <!-- Fast sample pickers for testing -->
+            <div class="sample-picker">
+              <span>Demo Quick Picks:</span>
+              <button class="sq-btn" data-type="gstin" data-val="32TTNXB7384T1ZW">Balaji Dental (Active)</button>
+              <button class="sq-btn" data-type="gstin" data-val="37IHKXV5167L1ZS">Vindhya Tours (Cancelled!)</button>
+              <button class="sq-btn" data-type="udyam" data-val="UDYAM-KL-00-3078801">Balaji Udyam</button>
+              <button class="sq-btn" data-type="udyam" data-val="UDYAM-TN-00-3866196">Star Electronics</button>
+            </div>
+
+            <!-- GSTIN Lookup -->
+            <div class="lookup-group">
+              <label for="kyc-gstin-input">Enter 15-character GSTIN</label>
+              <div class="input-with-action">
+                <input type="text" id="kyc-gstin-input" placeholder="e.g., 32TTNXB7384T1ZW" maxlength="15">
+                <button id="btn-lookup-gstin" class="secondary-btn">Check GSTIN</button>
+              </div>
+              <div id="gstin-result-card" class="lookup-result-card hidden"></div>
+            </div>
+
+            <!-- Udyam Lookup -->
+            <div class="lookup-group">
+              <label for="kyc-udyam-input">Enter Udyam Registration Number</label>
+              <div class="input-with-action">
+                <input type="text" id="kyc-udyam-input" placeholder="e.g., UDYAM-KL-00-3078801">
+                <button id="btn-lookup-udyam" class="secondary-btn">Check Udyam</button>
+              </div>
+              <div id="udyam-result-card" class="lookup-result-card hidden"></div>
+            </div>
+          </div>
+
+          <!-- Method B: Document Upload & Automated OCR -->
+          <div class="kyc-method-card">
+            <div class="km-header">
+              <span class="km-icon">📄</span>
+              <div>
+                <h3>Method B: Smart Document OCR</h3>
+                <small>Extracts & checks 90-day address validity</small>
+              </div>
+            </div>
+
+            <!-- Specimen Document Quick Selector -->
+            <div class="sample-picker">
+              <span>Test Specimen Applicants:</span>
+              <button class="doc-sample-btn" data-app="K02">K02 (Valid Clinic)</button>
+              <button class="doc-sample-btn" data-app="K01">K01 (Cancelled GSTIN)</button>
+              <button class="doc-sample-btn" data-app="K11">K11 (Expired Bill >90d)</button>
+              <button class="doc-sample-btn" data-app="K07">K07 (Name Mismatch)</button>
+            </div>
+
+            <div id="doc-dropzone" class="dropzone">
+              <input type="file" id="kyc-file-input" accept="image/*,.pdf" class="file-input">
+              <div class="dz-content">
+                <span class="dz-icon">☁️</span>
+                <strong>Drop specimen KYC document or click to browse</strong>
+                <small>Supports Electricity Bill, GST Certificate, Udyam, Signatory ID</small>
+              </div>
+            </div>
+
+            <!-- OCR Extraction & Validation Report -->
+            <div id="ocr-report-card" class="ocr-report hidden">
+              <div class="ocr-report-header">
+                <strong id="ocr-doc-title">Document Analysis</strong>
+                <span id="ocr-status-badge" class="badge">ANALYZING</span>
+              </div>
+              <div id="ocr-extracted-fields" class="ocr-fields"></div>
+              <div id="ocr-rules-checklist" class="ocr-rules"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Overall Verification Verdict Banner -->
+        <div id="kyc-verdict-banner" class="verdict-banner hidden">
+          <!-- Injected by app.js -->
+        </div>
+
+        <div class="panel-bottom-actions">
+          <button id="goto-track-btn" class="primary-btn" disabled>
+            <span>Confirm Verification & Place Order</span> <span>→</span>
+          </button>
+        </div>
+      </div>
+
+
+      <!-- ============================================== -->
+      <!-- TAB 4: INTELLIGENT ORDER TRACKER & SLA -->
+      <!-- ============================================== -->
+      <div id="panel-track" class="tab-panel hidden">
+        <div class="panel-header">
+          <div>
+            <span class="section-tag">STEP 4 OF 4 · SERVICE PROVISIONING</span>
+            <h2>Live Order Tracker & SLA Commitments</h2>
+            <p class="subtitle">Track your exact installation milestones in real-time. No need to make follow-up status calls.</p>
+          </div>
+          <div class="order-id-badge">
+            <span class="oid-lbl">ORDER ID</span>
+            <span id="tracker-order-id" class="oid-val">AB-2026-9481</span>
+          </div>
+        </div>
+
+        <!-- Order Summary Card -->
+        <div class="order-overview-card">
+          <div class="ooc-item">
+            <span class="ooc-lbl">SELECTED BUNDLE</span>
+            <strong id="tracker-bundle-name">Professional Office Suite (Biz Fibre 300 + Email + Security)</strong>
+          </div>
+          <div class="ooc-item">
+            <span class="ooc-lbl">TOTAL MONTHLY</span>
+            <strong id="tracker-mrc">₹2,423 / month</strong>
+          </div>
+          <div class="ooc-item">
+            <span class="ooc-lbl">ESTIMATED ACTIVATION SLA</span>
+            <strong id="tracker-sla-date" class="highlight-date">5 Working Days (July 20, 2026)</strong>
+          </div>
+          <div class="ooc-item">
+            <span class="ooc-lbl">CURRENT STATUS</span>
+            <span class="status-pill in-progress">Partner Assigned · Feasibility</span>
+          </div>
+        </div>
+
+        <!-- Visual Milestone Timeline -->
+        <div class="tracker-timeline">
+          <div class="tl-step completed">
+            <div class="tl-marker">✓</div>
+            <div class="tl-content">
+              <strong>Order Placed & Digital Consent</strong>
+              <small>July 15, 2026 · 10:45 AM</small>
+              <p>Bundle confirmed with transparent MRC & 12-month tenure.</p>
+            </div>
+          </div>
+
+          <div class="tl-step completed">
+            <div class="tl-marker">✓</div>
+            <div class="tl-content">
+              <strong>Smart KYC Verified</strong>
+              <small>July 15, 2026 · 10:47 AM</small>
+              <p>GSTIN registry validated & address proof verified (< 90 days).</p>
+            </div>
+          </div>
+
+          <div class="tl-step active">
+            <div class="tl-marker">3</div>
+            <div class="tl-content">
+              <strong>Field Partner Assigned & Cable Feasibility</strong>
+              <small>In Progress · Expected within 24 hours</small>
+              <p>Local technician assigned to drop fiber line to premises.</p>
+            </div>
+          </div>
+
+          <div class="tl-step">
+            <div class="tl-marker">4</div>
+            <div class="tl-content">
+              <strong>Hardware Delivery & CPE Installation</strong>
+              <small>Scheduled · July 18, 2026</small>
+              <p>Wi-Fi 6 router setup, static IP binding & device security configuration.</p>
+            </div>
+          </div>
+
+          <div class="tl-step">
+            <div class="tl-marker">5</div>
+            <div class="tl-content">
+              <strong>Service Activated & Handover</strong>
+              <small>Milestone · July 20, 2026</small>
+              <p>Single consolidated billing goes live. Welcome kit delivered.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Assigned Local Partner Handoff Card -->
+        <div class="partner-contact-card">
+          <div class="pcc-left">
+            <div class="partner-avatar">👨‍🔧</div>
+            <div>
+              <span class="pcc-tag">YOUR ASSIGNED LOCAL ACCEL PARTNER</span>
+              <h4 id="partner-name">Rajesh Kumar — Rajasthan Telecom Hub</h4>
+              <p>Certified Installation & Service Partner · Jaipur Cluster 2</p>
+              <small>Direct Mobile: <strong>+91 98290-XXXXX</strong> · SLA: On-site visit within 48h</small>
+            </div>
+          </div>
+          <div class="pcc-right">
+            <button id="partner-wa-btn" class="pill-btn wa-pill">
+              <span>💬</span> Message Partner on WhatsApp
+            </button>
+          </div>
+        </div>
+
+        <div class="tracker-footer-note">
+          <span>🔔</span> You will receive real-time SMS & WhatsApp alerts as each milestone finishes. No status chase calls required.
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- ============================================== -->
+  <!-- WHATSAPP SIMULATION MODAL (STRETCH GOAL 1) -->
+  <!-- ============================================== -->
+  <div id="wa-modal" class="wa-modal-overlay hidden">
+    <div class="wa-modal-container">
+      <!-- Top Quick Navigation Bar -->
+      <div class="wa-modal-top-bar">
+        <div class="wa-modal-title">
+          <span>💬</span>
+          <strong>WhatsApp Mode Preview</strong>
+          <small>(Stretch Goal)</small>
+        </div>
+        <div class="wa-modal-nav-actions">
+          <a href="backoffice.html" class="wa-nav-btn partner-link" target="_blank" title="Open Sales & Partner Cockpit">
+            <span>👔</span> Partner Portal ↗
+          </a>
+          <button id="wa-close-floating-btn" class="wa-nav-btn exit-btn" title="Close WhatsApp & Return to Portal">
+            ✕ Back to Portal
+          </button>
+        </div>
+      </div>
+
+      <div class="wa-phone-frame">
+        <div class="wa-header">
+          <button id="close-wa-btn" class="wa-back-btn" title="Back to Main Web Journey">
+            <span>← Back</span>
+          </button>
+          <div class="wa-avatar">A</div>
+          <div class="wa-info">
+            <strong>Accel Business Udyam Bot</strong>
+            <small>Official Verified Business · Online</small>
+          </div>
+          <button id="wa-close-icon-btn" class="wa-close-icon" title="Close WhatsApp">✕</button>
+        </div>
+
+        <div id="wa-chat-body" class="wa-body">
+          <div class="wa-msg bot">
+            <p>Namaste! 🙏 Welcome to <strong>Accel Business Udyam Digital</strong>.</p>
+            <p>Get high-speed broadband, business SIMs and cloud tools for your business in 5 minutes right here on WhatsApp.</p>
+            <small class="wa-time">10:30 AM</small>
+          </div>
+
+          <div class="wa-msg bot">
+            <p>Which business do you run?</p>
+            <div class="wa-options">
+              <button class="wa-opt-btn" data-msg="I run a Clinic / Office">🩺 Clinic / CA Office</button>
+              <button class="wa-opt-btn" data-msg="I run a Retail Shop / Kirana">🛒 Retail / Kirana</button>
+              <button class="wa-opt-btn" data-msg="I run multiple branches">🏬 Multi-Store Retail</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="wa-footer">
+          <input type="text" id="wa-input" placeholder="Type a message...">
+          <button id="wa-send-btn" class="wa-send">➤</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- App Footer -->
+  <footer class="app-footer">
+    <div class="footer-container">
+      <div class="f-left">
+        <span>© 2026 Accel Telecom / Accel Business · Enterprise Track A (Project Udyam Digital)</span>
+        <span class="f-sep">·</span>
+        <span>All data & mock registries are synthetic</span>
+      </div>
+      <div class="f-right">
+        <span>DPDP Act 2023 Compliant</span>
+        <span class="f-sep">·</span>
+        <a href="backoffice.html" target="_blank">Sales & Partner Cockpit →</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
